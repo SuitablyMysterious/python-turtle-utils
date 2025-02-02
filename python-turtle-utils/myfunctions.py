@@ -37,3 +37,9 @@ def easy_setup(t,w,width,height,bgcolor):
     w.setup(width, height)
     w.bgcolor(bgcolor)
 
+def wasdGameControls(t,w):
+    w.onkey(lambda: t.setheading(90), 'w')
+    w.onkey(lambda: t.setheading(180), 'a')
+    w.onkey(lambda: t.setheading(270), 's')
+    w.onkey(lambda: t.setheading(0), 'd')
+    w.listen()
