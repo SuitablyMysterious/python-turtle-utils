@@ -30,9 +30,10 @@ def euclidean_distance(x1, y1, x2, y2):
     # Euclidean distance between two points
     return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
 
-def easy_setup(t,w,width,height):
+def easy_setup(t,w,width,height,bgcolor):
     # Setup the turtle
     t.speed(0)
     t.hideturtle()
     w.setup(width, height)
+    w.bgcolor(bgcolor)
 
