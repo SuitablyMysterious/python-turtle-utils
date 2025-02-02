@@ -1,5 +1,9 @@
-import turtle as tr
+import turtle
 import math
+
+def make_turtles(screenName, turtleName):
+    turtleName = turtle.Turtle()
+    screenName = turtle.Screen()
 
 def draw_square(t, side_length):
     # Draws a square
@@ -37,9 +41,21 @@ def easy_setup(t,w,width,height,bgcolor):
     w.setup(width, height)
     w.bgcolor(bgcolor)
 
-def wasdGameControls(t,w):
+def wasdGameControls(t,w,velocity):
     w.onkey(lambda: t.setheading(90), 'w')
     w.onkey(lambda: t.setheading(180), 'a')
     w.onkey(lambda: t.setheading(270), 's')
     w.onkey(lambda: t.setheading(0), 'd')
     w.listen()
+
+def moveTurtle(t,w,direction,velocity,interval):
+        if direction == 'up':
+            t.setheading(90)
+        elif direction == 'down':
+            t.setheading(180)
+        elif direction == 'left':
+            t.setheading(270)
+        elif direction == 'right':
+            t.setheading(0)
+        t.forward(velocity)
+        w.ontimer(moveTurtle, interval)
